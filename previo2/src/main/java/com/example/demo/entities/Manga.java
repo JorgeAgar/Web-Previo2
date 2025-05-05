@@ -1,5 +1,6 @@
 package com.example.demo.entities;
 
+import java.time.LocalDate;
 import java.util.Date;
 import java.util.List;
 
@@ -34,7 +35,7 @@ public class Manga {
     private String nombre;
 
     @Column(name = "fecha_lanzamiento", nullable = false)
-    private Date fechaLanzamiento;
+    private LocalDate fechaLanzamiento;
 
     private Integer temporadas;
 
