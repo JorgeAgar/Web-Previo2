@@ -27,6 +27,13 @@ public class FavoritoService {
     private UsuarioRepository usuarioRepository;
 	@Autowired
 	private MangaRepository mangaRepository;
+	
+	public void addUserFavorite(String username, Integer mangaId) {
+		Usuario usuario = usuarioRepository.findByUsername(username);
+		Manga manga = mangaRepository.getReferenceById(mangaId);
+		Favorito fav = new Favorito(manga, usuario);
+		favoritoRepository.save(fav);
+	}
 
     public List<FavoritoDTO> getFavoritosByUsername(String username) {
         Usuario usuario = usuarioRepository.findByUsername(username);
