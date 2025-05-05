@@ -1,9 +1,11 @@
 package com.example.demo.entities;
 
+import java.io.Serializable;
 import java.time.LocalDate;
 import java.util.Date;
 import java.util.List;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonInclude;
 
 import jakarta.persistence.Column;
@@ -25,7 +27,8 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 @JsonInclude(JsonInclude.Include.NON_NULL)
-public class Manga {
+@JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
+public class Manga implements Serializable{
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

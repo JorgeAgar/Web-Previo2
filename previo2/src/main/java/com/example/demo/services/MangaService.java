@@ -17,4 +17,7 @@ public class MangaService {
 		return mRepo.findAll();
 	}
 
+	public Manga getMangaById(int id) {
+		return mRepo.getReferenceById(id);
+	}
 }
