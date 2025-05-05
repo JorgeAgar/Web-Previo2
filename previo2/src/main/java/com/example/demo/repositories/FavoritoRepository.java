@@ -12,5 +12,6 @@ import com.example.demo.entities.Usuario;
 public interface FavoritoRepository extends JpaRepository<Favorito, FavoritoId> {
 	void deleteByManga(Manga manga);
 	List<Favorito> findByUsuario(Usuario usuario);
+	Favorito findByUsuarioAndManga(Usuario usuario, Manga manga);
 
 }
