@@ -3,6 +3,8 @@ package com.example.demo.entities;
 import java.util.Date;
 import java.util.List;
 
+import com.fasterxml.jackson.annotation.JsonInclude;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -21,11 +23,12 @@ import lombok.NoArgsConstructor;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
+@JsonInclude(JsonInclude.Include.NON_NULL)
 public class Manga {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
+    private Integer id;
 
     @Column(nullable = false, length = 200)
     private String nombre;
@@ -33,17 +36,17 @@ public class Manga {
     @Column(name = "fecha_lanzamiento", nullable = false)
     private Date fechaLanzamiento;
 
-    private int temporadas;
+    private Integer temporadas;
 
     @ManyToOne
     @JoinColumn(name = "pais_id", nullable = false)
     private Pais pais;
 
-    private int anime;
+    private Integer anime;
 
-    private int juego;
+    private Integer juego;
 
-    private int pelicula;
+    private Integer pelicula;
 
     @ManyToOne
     @JoinColumn(name = "tipo_id", nullable = false)

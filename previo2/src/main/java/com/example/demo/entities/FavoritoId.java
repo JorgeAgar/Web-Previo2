@@ -5,8 +5,8 @@ import java.util.Objects;
 
 public class FavoritoId implements Serializable {
 
-    private Long manga;
-    private Long usuario;
+    private Integer manga;
+    private Integer usuario;
 
     @Override
     public boolean equals(Object o) {
